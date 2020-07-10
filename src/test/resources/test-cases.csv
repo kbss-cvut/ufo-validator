@@ -1,0 +1,6 @@
+rule   ,output                                                      ,valid
+r1.ttl ,rule-test-cases/intrinsic-trope-type-without-inheres-in.ttl ,Violation
+r1.ttl ,rule-test-cases/intrinsic-trope-type-with-inheres-in-without-type.ttl ,Violation
+r1.ttl ,rule-test-cases/intrinsic-trope-type-with-inheres-in-with-event-type.ttl ,Violation
+r1.ttl ,rule-test-cases/intrinsic-trope-type-with-inheres-in-with-endurant-type.ttl ,Pass
+r1.ttl ,rule-test-cases/intrinsic-trope-type-with-more-inheres-ins.ttl ,Violation

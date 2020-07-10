@@ -1,0 +1,16 @@
+@prefix sh:             <http://www.w3.org/ns/shacl#> .
+@prefix ufo:            <http://onto.fel.cvut.cz/ontologies/ufo/> .
+@prefix ufo-validation: <http://onto.fel.cvut.cz/ontologies/ufo-validation/> .
+
+ufo-validation:r3
+    a              sh:NodeShape ;
+    sh:severity    sh:Violation ;
+    sh:message
+                   "An event is directly caused by another event."@en ;
+    sh:targetClass ufo:event ;
+    sh:property    [ sh:path                [sh:inversePath ufo:directly-causes] ;
+                     sh:qualifiedValueShape [ sh:class ufo:event ] ;
+                     sh:qualifiedMinCount   1 ] ; # this
+.
+
+

@@ -1,0 +1,15 @@
+@prefix sh:             <http://www.w3.org/ns/shacl#> .
+@prefix ufo:            <http://onto.fel.cvut.cz/ontologies/ufo/> .
+@prefix ufo-validation: <http://onto.fel.cvut.cz/ontologies/ufo-validation/> .
+
+ufo-validation:r2
+    a              sh:NodeShape ;
+    sh:severity    sh:Violation ;
+    sh:message
+                   "An event has at least one pre-state."@en ;
+    sh:targetClass ufo:event ;
+    sh:property    [ sh:path                [sh:inversePath ufo:pre-state] ;
+                     sh:minCount            1;
+                     sh:qualifiedValueShape [ sh:class ufo:situation ] ;
+                     sh:qualifiedMinCount   1 ] ; # this
+.

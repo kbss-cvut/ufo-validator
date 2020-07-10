@@ -1,0 +1,20 @@
+@prefix sh:             <http://www.w3.org/ns/shacl#> .
+@prefix ufo:            <http://onto.fel.cvut.cz/ontologies/ufo/> .
+@prefix ufo-validation: <http://onto.fel.cvut.cz/ontologies/ufo-validation/> .
+
+ufo-validation:r1
+    a              sh:NodeShape ;
+    sh:severity    sh:Violation ;
+    sh:message     "An intrinsic trope inheres in exactly one endurant."@en ;
+    sh:targetClass ufo:intrinsic-trope-type ;
+    sh:or          ( [ sh:property [ sh:path                [ sh:inversePath ufo:has-trope ] ;
+                                     sh:minCount            1 ;
+                                     sh:maxCount            1 ;
+                                     sh:qualifiedValueShape [ sh:class ufo:endurant ] ;
+                                     sh:qualifiedMinCount   1 ] ]
+                     [ sh:property [ sh:path                ufo:inheres-in ;
+                                     sh:minCount            1 ;
+                                     sh:maxCount            1 ;
+                                     sh:qualifiedValueShape [ sh:class ufo:endurant ] ;
+                                     sh:qualifiedMinCount   1 ] ] )
+.

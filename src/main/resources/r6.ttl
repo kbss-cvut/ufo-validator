@@ -1,0 +1,15 @@
+@prefix sh:             <http://www.w3.org/ns/shacl#> .
+@prefix ufo:            <http://onto.fel.cvut.cz/ontologies/ufo/> .
+@prefix ufo-validation: <http://onto.fel.cvut.cz/ontologies/ufo-validation/> .
+
+ufo-validation:r3
+    a              sh:NodeShape ;
+    sh:severity    sh:Violation ;
+    sh:message
+                   "An event has exactly one end point."@en ;
+    sh:targetClass ufo:event ;
+    sh:property    [ sh:path                ufo:has-end-point ;
+                     sh:maxCount            1;
+                     sh:qualifiedValueShape [ sh:class ufo:time-point ] ;
+                     sh:qualifiedMinCount   1 ] ; # this
+.
