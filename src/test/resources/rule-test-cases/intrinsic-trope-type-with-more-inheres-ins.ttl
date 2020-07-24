@@ -4,6 +4,6 @@
 @prefix ufo:          <http://onto.fel.cvut.cz/ontologies/ufo/> .
 
 :exampleTrope
-    a               ufo:intrinsic-trope-type ;
+    a               ufo:intrinsic-trope ;
     ufo:inheres-in  :exampleEvent ;
     ufo:inheres-in  :exampleEvent2 .
